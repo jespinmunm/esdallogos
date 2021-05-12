@@ -1,0 +1,36 @@
+        Span_SequencePosition=[]
+        Span_SequencePosition_vectorDuplicated=[]
+        Span_SequencePosition_Duplicated=[None for c in range(100)]
+        total_structures=0
+        Span_SequencePosition_missing=[None for c in range(100)]
+        d_estructure_spans={}
+        v_estructure_spans=[]
+        #Modificado el 11 de mayo para que si no hay spans de el codigo de error 'E202'
+        for y in range(0, len(data["properties"]["EsdalStructure"])):
+            total_structures=total_structures+1
+            if (len(data["properties"]["EsdalStructure"][y]["UnderbridgeSections"]["UnderbridgeSection"]["Span"]) == 0):
+                Span_SequencePosition_missing[y+1]=1
+                Span_SequencePosition.append(0)
+                v_estructure_spans.append(0)
+            else:                
+                for x in range(0, len(data["properties"]["EsdalStructure"][y]["UnderbridgeSections"]["UnderbridgeSection"]["Span"])):
+                    Span_SequencePosition_Duplicated[y+1]=0
+                    for z in Span_SequencePosition_vectorDuplicated:
+                        if z==data["properties"]["EsdalStructure"][y]["UnderbridgeSections"]["UnderbridgeSection"]["Span"][x]["SpanPosition"]["SequencePosition"]:
+                            Span_SequencePosition_Duplicated[y+1]=1
+                            Span_SequencePosition.append(data["properties"]["EsdalStructure"][y]["UnderbridgeSections"]["UnderbridgeSection"]["Span"][x]["SpanPosition"]["SequencePosition"])
+                            v_estructure_spans.append(data["properties"]["EsdalStructure"][y]["UnderbridgeSections"]["UnderbridgeSection"]["Span"][x]["SpanPosition"]["SequencePosition"])
+                    if Span_SequencePosition_Duplicated[y+1]==0:
+                        if (data["properties"]["EsdalStructure"][y]["UnderbridgeSections"]["UnderbridgeSection"]["Span"][x]["SpanPosition"]["SequencePosition"] != ""):
+                            Span_SequencePosition_vectorDuplicated.append(data["properties"]["EsdalStructure"][y]["UnderbridgeSections"]["UnderbridgeSection"]["Span"][x]["SpanPosition"]["SequencePosition"])
+                            Span_SequencePosition.append(data["properties"]["EsdalStructure"][y]["UnderbridgeSections"]["UnderbridgeSection"]["Span"][x]["SpanPosition"]["SequencePosition"])
+                            v_estructure_spans.append(data["properties"]["EsdalStructure"][y]["UnderbridgeSections"]["UnderbridgeSection"]["Span"][x]["SpanPosition"]["SequencePosition"])
+                        else:
+                            Span_SequencePosition_missing[y+1]=1
+                            Span_SequencePosition.append(0)
+                            v_estructure_spans.append(0)
+            d_estructure_spans[y+1]=v_estructure_spans
+            v_estructure_spans=[]
+            Span_SequencePosition_vectorDuplicated=[]
+            
+
