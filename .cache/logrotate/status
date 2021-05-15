@@ -1,0 +1,14 @@
+logrotate state -- version 2
+"/home/jesus/.cache/upstart/update-notifier-release.log" 2021-5-15-11:0:0
+"/home/jesus/.cache/upstart/ssh-agent.log" 2021-5-15-11:17:40
+"/home/jesus/.cache/upstart/unity7.log" 2021-5-15-11:17:40
+"/home/jesus/.cache/upstart/gnome-keyring-ssh.log" 2021-5-15-11:17:40
+"/home/jesus/.cache/upstart/unity-settings-daemon.log" 2021-5-15-11:17:40
+"/home/jesus/.cache/upstart/gnome-keyring.log" 2021-5-15-11:17:40
+"/home/jesus/.cache/upstart/gpg-agent.log" 2021-5-15-11:17:40
+"/home/jesus/.cache/upstart/unity-panel-service.log" 2021-5-15-11:17:40
+"/home/jesus/.cache/upstart/upstart-event-bridge.log" 2021-5-15-11:17:40
+"/home/jesus/.cache/upstart/window-stack-bridge.log" 2021-5-15-11:17:40
+"/home/jesus/.cache/upstart/hud.log" 2021-5-15-11:17:40
+"/home/jesus/.cache/upstart/dbus.log" 2021-5-15-11:17:40
+"/home/jesus/.cache/upstart/indicator-sound.log" 2021-5-15-11:17:40
